@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SelectableItetm } from './selectable-item/selectable-item';
 import { SelectableItemComponent } from './selectable-item/selectable-item.component';
 
 @Component({
@@ -9,5 +10,11 @@ import { SelectableItemComponent } from './selectable-item/selectable-item.compo
   styleUrl: './selectable-components-list.component.scss'
 })
 export class SelectableComponentsComponent {
-  items: string[] = ["one", "two", "three", "four", "five"]
+  selectableItems: SelectableItetm<string>[] = [
+    new SelectableItetm<string>("one"), 
+    new SelectableItetm<string>("two"), 
+    new SelectableItetm<string>("three"), 
+    new SelectableItetm<string>("four"), 
+    new SelectableItetm<string>("five") 
+  ]
 }

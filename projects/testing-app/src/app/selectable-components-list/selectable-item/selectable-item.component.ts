@@ -1,4 +1,5 @@
 import { Component, HostListener, Input } from '@angular/core';
+import { SelectableItetm } from './selectable-item';
 
 @Component({
   selector: 'ngt-selectable-item',
@@ -7,17 +8,18 @@ import { Component, HostListener, Input } from '@angular/core';
   templateUrl: './selectable-item.component.html',
   styleUrl: './selectable-item.component.scss'
 })
-export class SelectableItemComponent {
-  @Input() item: string = "";
-  selected: boolean = false;
+export class SelectableItemComponent<T> {
+  @Input() selectableItem: SelectableItetm<T> | null = null;
 
   @HostListener('click', ['$event'])
   selectItem() {
-    this.selected = !this.selected;
+    if(this.selectableItem) {
+      this.selectableItem.selected = !this.selectableItem.selected;
+    }
   }
 
   getClasses(): string[] {
-    if(this.selected) {
+    if(this.selectableItem?.selected) {
       return ["item", "item-selected"]
     }
     return ["item", "item-unselected"];
