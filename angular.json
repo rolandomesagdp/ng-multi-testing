@@ -12,7 +12,7 @@
       },
       "root": "projects/testing-app",
       "sourceRoot": "projects/testing-app/src",
-      "prefix": "app",
+      "prefix": "ngt",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
