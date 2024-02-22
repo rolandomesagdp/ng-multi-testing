@@ -1,0 +1,14 @@
+@import "../../../theme/palette.scss";
+
+.item {
+    min-width: 140px;
+    min-height: 130px;
+    border-radius: 8px;
+    background-color: $primary-600;
+    color: $contrast-500;
+
+    &-title {
+        margin-left: 35%;
+        padding-top: 35%;
+    }
+}

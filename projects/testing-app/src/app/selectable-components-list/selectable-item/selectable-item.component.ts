@@ -1,5 +1,5 @@
 import { Component, HostListener, Input } from '@angular/core';
-import { SelectableItetm } from './selectable-item';
+import { SelectableItem } from './selectable-item';
 
 @Component({
   selector: 'ngt-selectable-item',
@@ -9,7 +9,7 @@ import { SelectableItetm } from './selectable-item';
   styleUrl: './selectable-item.component.scss'
 })
 export class SelectableItemComponent<T> {
-  @Input() selectableItem: SelectableItetm<T> | null = null;
+  @Input() selectableItem: SelectableItem<T> | null = null;
 
   @HostListener('click', ['$event'])
   selectItem() {
