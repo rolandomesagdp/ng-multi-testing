@@ -1,6 +1,18 @@
+@import '../../theme/palette.scss';
+
 .container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-top: 10%;
+}
+
+.log-in-button {
+    background-color: $alert-500;
+    color: $contrast-500;
+}
+
+.log-out-button {
+    background-color: $error-500;
+    color: $contrast-500;
 }
