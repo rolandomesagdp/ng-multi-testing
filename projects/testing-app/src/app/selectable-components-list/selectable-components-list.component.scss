@@ -12,6 +12,12 @@
     color: $contrast-500;
 }
 
+.to-admin-button {
+    background-color: $alert-500;
+    color: $contrast-500;
+    margin-left: 20px;
+}
+
 .log-out-button {
     background-color: $error-500;
     color: $contrast-500;

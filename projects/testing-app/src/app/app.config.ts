@@ -11,8 +11,8 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(), 
     provideAnimationsAsync(),
     importProvidersFrom(ConfiguratorAuthModule.forRoot({
-      domain: "dev-3u1ixbtbepvslk88.us.auth0.com",
-      clientId: "37rFp5Rpm87V66zjoqGkEIm1lAutrXfm",
+      domain: "fluidra-dev.eu.auth0.com",
+      clientId: "jP66swf0gj6R6lKvYY7ROILgoLPpw4s4",
       poolAssistantUri: "/api/v1",
       backOfficeUri: "/api/v1"
     }))
