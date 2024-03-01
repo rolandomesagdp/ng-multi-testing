@@ -13,9 +13,7 @@ export class EntryRoute {
         return this.entryRouteEventPayload.url;
     }
 
-    constructor(private router: Router) {
-        
-    }
+    constructor(private router: Router) { }
 
     subscribeToRouterEvents(): void {
         this.router.events.pipe(

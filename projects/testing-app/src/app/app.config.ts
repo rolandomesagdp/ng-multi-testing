@@ -6,8 +6,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ConfiguratorAuthModule } from './auth/auth.module';
 import { EntryRoute } from './user/entry-route';
 
-export function initializeApp(router: Router) {
-  return () => null;
+export function initializeApp(entryRoute: EntryRoute) {
+  return () => {
+    entryRoute.subscribeToRouterEvents();
+  };
 }
 
 export const appConfig: ApplicationConfig = {
