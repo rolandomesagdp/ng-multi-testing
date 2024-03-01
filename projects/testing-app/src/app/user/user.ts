@@ -29,7 +29,7 @@ export class ConfiguratorUser {
         return this.authService.isAuthenticated$;
     }
 
-    constructor(private authService: AuthService, public entryRoute: EntryRoute) {
+    constructor(private authService: AuthService, private entryRoute: EntryRoute) {
         this.setUser()
     }
 
