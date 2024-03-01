@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { AuthService, User } from '@auth0/auth0-angular';
 import { CommonModule } from '@angular/common';
 import { Observable, tap } from 'rxjs';
+import { ConfiguratorUser } from '../user/user';
 
 @Component({
   selector: 'selectable-components-list',
@@ -15,7 +16,7 @@ import { Observable, tap } from 'rxjs';
   templateUrl: './selectable-components-list.component.html',
   styleUrl: './selectable-components-list.component.scss'
 })
-export class SelectableComponentsComponent {
+export class SelectableComponentsList {
   selectableItems: SelectableItem<string>[] = [
     new SelectableItem<string>("one"), 
     new SelectableItem<string>("two"), 
@@ -24,17 +25,12 @@ export class SelectableComponentsComponent {
     new SelectableItem<string>("five") 
   ];
 
-  userLoggedIn$: Observable<boolean> = this.authService.isAuthenticated$;
+  userLoggedIn$: Observable<boolean> = this.currentUser.isAuthenticated$;
 
-  constructor(private router: Router, public authService: AuthService) { }
-
-  logIn(): void {
-    this.authService.loginWithRedirect();
-  }
+  constructor(private router: Router, public currentUser: ConfiguratorUser) { }
 
   logout(): void {
-    const logoutRedirection = document.location.origin;
-    this.authService.logout({ logoutParams: { returnTo: logoutRedirection } });
+    this.currentUser.logout();
   }
 
   navigateToMultiContent(): void {

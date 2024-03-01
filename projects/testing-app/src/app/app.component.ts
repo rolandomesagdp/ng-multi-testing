@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ConfiguratorUser } from './user/user';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,5 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class AppComponent {
   title = 'testing-app';
+  constructor() { }
 }

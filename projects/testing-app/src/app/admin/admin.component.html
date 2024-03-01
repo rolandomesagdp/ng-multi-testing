@@ -1,8 +1,6 @@
-<ng-container *ngIf="currentUser$ | async as user">
-    <ul>
-        <li>{{ user.nickname }}</li>
-        <li>{{ user.email }}</li>
-        <li>{{ user["rol"] }}</li>
-    </ul>`
-    <button class="navigate-button" mat-button (click)="goToSelectable()">Go to selectable</button>
-</ng-container>
+<ul>
+    <li>{{ user.nickname }}</li>
+    <li>{{ user.email }}</li>
+    <li>{{ user.entryRoute.path }}</li>
+</ul>`
+<button class="navigate-button" mat-button (click)="goToSelectable()">Go to selectable</button>

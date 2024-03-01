@@ -8,11 +8,7 @@
 
 <br />
 
-<ng-container *ngIf="userLoggedIn$ | async; else loggedOut">
+<ng-container *ngIf="userLoggedIn$ | async">
     <button class="log-out-button" mat-button (click)="logout()">Logout</button>
     <button class="to-admin-button" mat-button (click)="navigateToMultiContent()">To multi content</button>
 </ng-container>
-
-<ng-template #loggedOut>
-    <button class="log-in-button" mat-button (click)="logIn()">Log in</button>
-</ng-template>

@@ -1,0 +1,8 @@
+@import '../../theme/palette.scss';
+
+.to-admin-button {
+    background-color: $alert-500;
+    color: $contrast-500;
+    margin-top: 20px;
+    margin-left: 20px;
+}
