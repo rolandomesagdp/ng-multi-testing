@@ -1,9 +1,8 @@
 import { inject } from "@angular/core";
-import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot } from "@angular/router";
+import { CanActivateFn, Router } from "@angular/router";
 import { ConfiguratorUser } from "../user/user";
 
-export const canActivateAdmin: CanActivateFn =
-  (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean => {
+export const canActivateBackOfficeAdmin: CanActivateFn = (): boolean => {
     const currentUser: ConfiguratorUser = inject(ConfiguratorUser);
     const router: Router = inject(Router);
 

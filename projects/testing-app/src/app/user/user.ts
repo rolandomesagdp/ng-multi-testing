@@ -1,14 +1,16 @@
-import { Injectable } from "@angular/core";
+import { Inject, Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { AuthService, User } from "@auth0/auth0-angular";
 import { Observable, take, tap } from "rxjs";
 import { EntryRoute } from "./entry-route";
-import { environment } from '../../environments/environment'
-import { UserRole } from "./user-roles";
+import { DIVISION_TOKEN } from "./user-division.token";
+
+export type UserRole = "admin" | "backofficeadmin" | "default";
 
 @Injectable({ providedIn: "root" })
 export class ConfiguratorUser {
     private _auth0User: User | null | undefined;
-    
+
     get id(): string | undefined { return this._auth0User?.sub };
 
     get email(): string | undefined { return this._auth0User?.email }
@@ -18,19 +20,25 @@ export class ConfiguratorUser {
     get nickname(): string | undefined { return this._auth0User?.nickname };
 
     get picture(): string | undefined { return this._auth0User?.picture };
-    
+
     get roles(): UserRole[] | undefined { return this.getUserRoles() };
 
-    get countryCode(): string | undefined { return "ES" };
-    
-    get division(): string { return environment.division }
+    get country(): string | undefined { return "ES" };
+
+    get division(): string { return this._division };
+
+    entryRoute: EntryRoute;
 
     get isAuthenticated$(): Observable<boolean> {
         return this.authService.isAuthenticated$;
     }
 
-    constructor(private authService: AuthService, public entryRoute: EntryRoute) {
-        this.setUser()
+    constructor(
+        private authService: AuthService,
+        @Inject(DIVISION_TOKEN) private _division: string,
+        router: Router) {
+        this.entryRoute = new EntryRoute(router);
+        this.setUser();
     }
 
     isAdmin(): boolean {
@@ -47,9 +55,9 @@ export class ConfiguratorUser {
         this.authService.loginWithRedirect({
             appState: { target: this.entryRoute.path },
             authorizationParams: {
-              division: this.division
+                division: this.division
             }
-          });
+        });
     }
 
     logout(): void {
@@ -58,14 +66,14 @@ export class ConfiguratorUser {
     }
 
     private getUserRoles(): UserRole[] | undefined {
-        return [ "admin", "backofficeadmin", "default" ]
+        return ["admin", "backofficeadmin", "default"]
     }
 
     private setUser() {
         this.authService.user$.pipe(
             take(1),
             tap((user: User | null | undefined) => {
-                    this._auth0User = user;
+                this._auth0User = user;
             })).subscribe();
     }
 }
