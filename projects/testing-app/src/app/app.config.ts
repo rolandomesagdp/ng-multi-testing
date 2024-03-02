@@ -5,14 +5,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ConfiguratorAuthModule } from './auth/auth.module';
 import { DIVISION_TOKEN } from './user/user-division.token';
 import { environment } from '../environments/environment';
-import { userInitializer } from './user/user-initializer';
+import { configuratorUserInitializer } from './user/user-initializer';
 import { ConfiguratorUser } from './user/user';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     { 
       provide: APP_INITIALIZER,
-      useFactory: userInitializer,
+      useFactory: configuratorUserInitializer,
       multi: true,
       deps: [ConfiguratorUser]
     },
