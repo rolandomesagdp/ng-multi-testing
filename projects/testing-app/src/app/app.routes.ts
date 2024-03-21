@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import { canActivateBackOfficeAdmin } from './auth/admin.guard';
+import { canActivateBackOfficeAdmin } from './auth/can-activate-backofficeadmin.guard';
 import { canActivateUser } from './auth/can-activate-user.guard';
 import { MultiContentComponent } from './multi-content/multi-content.component';
 import { SelectableComponentsList } from './selectable-components-list/selectable-components-list.component';

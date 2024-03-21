@@ -47,8 +47,7 @@ export class ConfiguratorUser {
     }
 
     isBackOfficeAdmin(): boolean {
-        const adminRole = this.roles?.find(x => x === "backofficeadmin");
-        return adminRole !== undefined;
+        return true;
     }
 
     logIn(): void {
@@ -65,8 +64,8 @@ export class ConfiguratorUser {
         this.authService.logout({ logoutParams: { returnTo: logoutRedirection } });
     }
 
-    private getUserRoles(): UserRole[] | undefined {
-        return ["admin", "backofficeadmin", "default"]
+    private getUserRoles(): UserRole[] {
+        return [ "default", "admin", "backofficeadmin" ];
     }
 
     private setUser() {

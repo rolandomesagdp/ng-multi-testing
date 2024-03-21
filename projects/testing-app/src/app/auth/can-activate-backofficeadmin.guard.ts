@@ -6,7 +6,7 @@ export const canActivateBackOfficeAdmin: CanActivateFn = (): boolean => {
     const currentUser: ConfiguratorUser = inject(ConfiguratorUser);
     const router: Router = inject(Router);
 
-    if (!currentUser.isAdmin())
+    if (!currentUser.isBackOfficeAdmin())
       router.navigateByUrl('selectable-components');
-    return currentUser.isAdmin()
+    return currentUser.isBackOfficeAdmin();
 };
