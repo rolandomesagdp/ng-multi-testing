@@ -22,7 +22,8 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(ConfiguratorAuthModule.forRoot({
       domain: "dev-3u1ixbtbepvslk88.us.auth0.com",
       clientId: "37rFp5Rpm87V66zjoqGkEIm1lAutrXfm",
-      poolAssistantUri: "/api/v1",
+      audience: "https://hello-world.example.com",
+      poolAssistantUri: "http://localhost:6060/api",
       backOfficeUri: "/api/v1"
     })),
     { provide: DIVISION_TOKEN, useValue: environment.division }

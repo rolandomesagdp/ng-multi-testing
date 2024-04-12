@@ -17,7 +17,8 @@ export class ConfiguratorAuthModule {
           domain: options.domain,
           clientId: options.clientId,
           authorizationParams: {
-            redirect_uri: window.location.origin
+            redirect_uri: window.location.origin,
+            audience: options.audience
           },
           httpInterceptor: {
             allowedList: [ 
