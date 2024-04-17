@@ -1,0 +1,19 @@
+@import "./palette.scss";
+
+.mat-mdc-snack-bar-container {
+    --mat-mdc-snack-bar-button-color: #{$contrast-50};
+    --mdc-snackbar-supporting-text-color: #{$contrast-900};
+    border-radius: 8px;
+
+    &.snackbar-success {
+        --mdc-snackbar-container-color: #{$primary-500};
+    }
+
+    &.snackbar-warn {
+        --mdc-snackbar-container-color: #{$alert-500};
+    }
+
+    &.snackbar-error {
+        --mdc-snackbar-container-color: #{$error-500};
+    }
+}

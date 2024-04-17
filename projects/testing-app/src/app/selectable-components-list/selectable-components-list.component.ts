@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { catchError, NEVER, Observable, take, tap } from 'rxjs';
 import { ConfiguratorUser } from '../user/user';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SnackbarService } from '../logging/snackbar.service';
 
 @Component({
   selector: 'selectable-components-list',
@@ -29,9 +30,15 @@ export class SelectableComponentsList implements OnInit {
 
   userLoggedIn$: Observable<boolean> = this.currentUser.isAuthenticated$;
 
-  constructor(private router: Router, public currentUser: ConfiguratorUser, private httpClient: HttpClient) { }
+  constructor(private router: Router, 
+    public currentUser: ConfiguratorUser, 
+    private httpClient: HttpClient,
+    private snackbar: SnackbarService) { }
   
   ngOnInit(): void {
+    this.snackbar.openWarn("Hello world");
+    // Esta es una llamada a un endpoint protegido por Auth0.
+    // Para que funcione necesita que el proyecto D:\Study\Auth0\api_aspnet-core_csharp_hello-world se esté ejecutando
     this.httpClient.get<string>("http://localhost:6060/api/messages/protected").pipe(
       take(1),
       tap((message: any) => {

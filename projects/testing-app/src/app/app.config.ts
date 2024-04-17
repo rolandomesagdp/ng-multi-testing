@@ -7,6 +7,7 @@ import { DIVISION_TOKEN } from './user/user-division.token';
 import { environment } from '../environments/environment';
 import { configuratorUserInitializer } from './user/user-initializer';
 import { ConfiguratorUser } from './user/user';
+import { LoggingModule } from './logging/logging.module';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +20,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes), 
     provideAnimationsAsync(), 
     provideAnimationsAsync(),
+    importProvidersFrom(LoggingModule),
     importProvidersFrom(ConfiguratorAuthModule.forRoot({
       domain: "dev-3u1ixbtbepvslk88.us.auth0.com",
       clientId: "37rFp5Rpm87V66zjoqGkEIm1lAutrXfm",
