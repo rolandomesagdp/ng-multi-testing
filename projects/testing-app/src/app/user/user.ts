@@ -1,5 +1,5 @@
 import { Inject, Injectable } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService, User } from "@auth0/auth0-angular";
 import { Observable, take, tap } from "rxjs";
 import { EntryRoute } from "./entry-route";
