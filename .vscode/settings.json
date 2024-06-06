@@ -1,8 +1,49 @@
 {
-    "editor.defaultFormatter": "EditorConfig.EditorConfig",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
+    "editor.indentSize": "tabSize",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
     "yaml.customTags": [
         "!reference sequence"
-    ]
+    ],
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+	"css.lint.validProperties": [
+        "composes"
+    ],
+    "scss.lint.validProperties": [
+        "composes"
+    ],
+	"typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+    "typescript.format.insertSpaceAfterConstructor": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+    "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
+    "typescript.format.semicolons": "insert",
+    "html.format.indentInnerHtml": true,
+    "html.format.wrapLineLength": 120,
+    "html.format.preserveNewLines": true,
+    "html.format.wrapAttributes": "preserve",
+    "scss.format.braceStyle": "collapse",
+    "scss.format.newlineBetweenRules": true,
+    "scss.format.newlineBetweenSelectors": true,
+    "scss.format.preserveNewLines": false,
+    "scss.format.spaceAroundSelectorSeparator": true,
 }
