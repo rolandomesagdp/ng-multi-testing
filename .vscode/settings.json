@@ -1,12 +1,4 @@
 {
-    "workbench.iconTheme": "vscode-icon-theme",
-    "workbench.colorTheme": "Visual Studio Light Theme (2017)",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-	"workbench.startupEditor": "none",
-    "workbench.preferredDarkColorTheme": "Visual Studio Light Theme (2017)",
-	"workbench.tree.enableStickyScroll": false,
-	"editor.stickyScroll.enabled": false,
-	"editor.stickyScroll.scrollWithEditor": false,
 	"editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.indentSize": "tabSize",
