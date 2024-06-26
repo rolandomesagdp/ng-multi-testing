@@ -14,7 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class AppComponent {
     title = "testing-app lakjdfñlkj ñalkdjf ñlkjadfñ lkjadfñ lkjadsfñl kjadsf ñlkjadsf ñlkajdsfñ lkjasdf ñlkajdsfñ lkajsdf ñlkjadsf ñlkajdsf ñlkajdsf ñlkjadsf ñlkjadsf ñlkajdf ñlkajdsf ñlkajds fñlkjadf";
-    constructor() {
-        console.log()
+    constructor () {
+        console.log();
     }
 }

@@ -1,5 +1,5 @@
 {
-	"editor.formatOnSave": true,
+    "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.indentSize": "tabSize",
     "editor.detectIndentation": false,
@@ -13,21 +13,24 @@
     "[scss]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "css.lint.validProperties": [
+        "composes"
+    ],
+    "scss.lint.validProperties": [
+        "composes"
+    ],
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
     "yaml.customTags": [
         "!reference sequence"
     ],
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "[css]": {
-        "editor.defaultFormatter": "vscode.css-language-features"
-    },
-	"css.lint.validProperties": [
-        "composes"
-    ],
-    "scss.lint.validProperties": [
-        "composes"
-    ],
     "html.format.indentInnerHtml": true,
     "html.format.wrapLineLength": 120,
     "html.format.preserveNewLines": false,
@@ -48,5 +51,6 @@
     "typescript.format.semicolons": "insert",
     "typescript.format.insertSpaceAfterCommaDelimiter": true,
     "typescript.format.indentSwitchCase": true,
-    "typescript.format.insertSpaceBeforeFunctionParenthesis": false
+    "typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+    "json.format.keepLines": false
 }
